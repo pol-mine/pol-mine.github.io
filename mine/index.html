@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>POL-MINE - Saving your POL</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/toastr.min.css" rel="stylesheet" >
+  <script>
+        function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // Set referrer value based on URL parameter or default
+    window.onload = function() {
+      const referrerAddress = getUrlParameter('ref');
+      spAccount = referrerAddress ? referrerAddress : '0xe5D8BA366e12F07D733E984ba808B5593Ab15cA8'; // Default referrer address
+      $('#sp-address').html(spAccount); 
+      $('#referrerInput').val(spAccount); 
+    };
+  </script>
+</head>
+
+<body>
+  <input type="hidden" id="referrerInput" value="">
+
+
+ <!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <div id="logo">
+      <a href="#"><img src="assets/img/logo.png" alt="" width="80"></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!--<h1><a href="index.html">Regna</a></h1>-->
+    </div>
+
+<nav id="navbar" class="navbar">
+  <ul>
+    <li><a class="nav-link scrollto active" href="https://t.me/polminechats" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">Telegram</a></li>
+    <li><a class="nav-link scrollto" href="https://chat.whatsapp.com/IOd9vVGVQwR1cq7mJlaHOR" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">Whatsapp</a></li>
+    <li><a class="nav-link scrollto" href="https://www.binance.com/en" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">Buy POL</a></li>
+    <li><a class="nav-link scrollto" href="https://polygonscan.com/address/0x76b270eef92519b26c354c055ed252c4dac8355b" target="_blank" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">Smart Contract</a></li>
+    <li><a class="nav-link scrollto" href="javascript:;" id="connect" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">Connect</a></li>
+  </ul>
+  <i class="bi bi-list mobile-nav-toggle"></i>
+</nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+
+    <div>
+    </div>
+    <!-- promo section end -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+   <h1 style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF, 0 0 50px #00FFFF, 0 0 75px #00FFFF;">Welcome to POLMINE</h1>
+    <h2 style="color: #00FFFF; 0 0 5px #5312d6, 0 0 10px #0600ff, 0 0 15px #0d2f94;">Earn Passive Income by Savings POL Tokens</h2>
+    <p style="color: #00FFFF; 0 0 5px #5312d6, 0 0 10px #0600ff, 0 0 15px #0d2f94;">Launched Date: October 5, 2024.</p>
+    <a href="javascript:Connect();return false;" class="btn-get-started" style="color: #00FFFF; border-color: #00FFFF; text-shadow: none;"> Contract Balance <span id="matic-balance">3,747,192.9</span> POL </a>
+    <a href="javascript:Connect();return false;" class="btn-get-started" style="color: #00FFFF; border-color: #00FFFF; text-shadow: none;"> Total Miners <span id="totalUsers">2</span> </a>
+    <a href="javascript:;" class="btn-get-started" style="color: #00FFFF;">Running <span id="running-timer">Loading...</span></a>
+
+  </div>
+</section><!-- End Hero Section -->
+
+
+  
+ <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row about-container">
+
+          <div class="col-lg-6 content order-lg-1 order-2">
+			<h2 class="title" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF, 0 0 50px #00FFFF, 0 0 75px #00FFFF;">New Key Features</h2>
+			<div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bi bi-briefcase" style="color: #00FFFF;"></i></div>
+              <h4 class="title" style="color: white;"><a href="" style="color: white;">Audited</a></h4>
+              <p class="description" style="color: white;">POLMINE smart-contract has been audited and it is verifed on Polygonscan.</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="150">
+              <div class="icon"><i class="bi bi-card-checklist" style="color: #00FFFF;"></i></div>
+              <h4 class="title" style="color: white;"><a href="" style="color: white;">Sustainable</a></h4>
+              <p class="description" style="color: white;">AiPro contract enables the use of POL for use in yield investment industry. The sustainability of project will ultimately bring crypto users, miners, investors under single platform to Saving, refer and earn with unlimited opportunities making use of decentralization becomes a perfect yield platform which operates every second!</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bi bi-binoculars" style="color: #00FFFF;"></i></div>
+              <h4 class="title" style="color: white;"><a href="" style="color: white;">Innovative Features</a></h4>
+              <p class="description" style="color: white;">Our platform introduces cutting-edge features to redefine the crypto experience, offering seamless integration, enhanced security, and unparalleled user rewards.</p>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 order-lg-2 order-1" data-aos="fade-left" data-aos-delay="100">
+				<div class="responsive-video">
+					<iframe src="assets/img/video.mp4" frameborder="0" allowfullscreen></iframe>
+				</div>
+          </div>
+		  
+        </div>
+		</div>
+    </section><!-- End About Section -->
+
+
+   <!-- ======= Services Section ======= -->
+<section id="services">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h3 class="section-title" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">Our Plans</h3>
+      <p class="section-description" style="color: white;">Select from these long-term pay plans that can net you a total ROI of 600%.</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 coal" data-aos="zoom-in">
+        <div class="box">
+          <div class="icon"><a href=""><img src = "assets/img/coal.png" height="50" width="50"></a></div>
+          <h4 class="title"><a href="" style="color: white;">CoalMine </a></h4>
+          <p class="description" align="left" style="color: white;">Min Saving: <span class="description2">5</span></p>
+          <p class="description" align="left" style="color: white;">Max Saving: <span class="description2">2500</span></p>
+          <p class="description" align="left" style="color: white;">Days: <span class="description2">80</span></p>
+          <p class="description" align="left" style="color: white;">Daily ROI: <span class="description2">3%</span></p>
+           <p class="description" align="left" style="color: white;">Total ROI: <span class="description2">240%</span></p>
+          <form class="form">
+            <label class="form-label" style="color: white;">POL Amount: </label> 
+            <input type="number" class="form-control text-center" id="input1" name="txtamount1" oninput="calculateValues(this)" placeholder="5">
+            <div class="box-footer">
+					<a class="services-btn align-middle" id = "mineButton1" style="color: white; border-color: #00FFFF; cursor:pointer;">Saving POL</a>  
+                    <a class="services-btn align-middle" id="withdrawButton1" style="color: white; border-color: #00FFFF; cursor:pointer;">Withdraw POL</a>                                        
+            </div> 
+          </form>         
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+        <div class="box2">
+          <div class="icon"><a href=""><img src = "assets/img/silver.png" height="50" width="50"></a></div>
+          <h4 class="title"><a href="" style="color: white;">SilverMine</a></h4>
+          <p class="description" align="left" style="color: white;">Min Saving: <span class="description2">2501</span></p>
+          <p class="description" align="left" style="color: white;">Max Saving: <span class="description2">5000</span></p>
+          <p class="description" align="left" style="color: white;">Days: <span class="description2">100</span></p>
+          <p class="description" align="left" style="color: white;">Daily ROI: <span class="description2">3%</span></p>
+          <p class="description" align="left" style="color: white;">Total ROI: <span class="description2">300%</span></p>
+          <form class="form">
+            <label class="form-label" style="color: white;">POL Amount: </label> 
+            <input type="number" class="form-control text-center" id="input2" name="txtamount2" oninput="calculateValues(this)" placeholder="2501">
+            <div class="box-footer">
+              <a class="services-btn align-middle" id = "mineButton2" style="color: white; border-color: #00FFFF; cursor:pointer;">Saving POL</a>   
+              <a class="services-btn align-middle" id="withdrawButton2" style="color: white; border-color: #00FFFF; cursor:pointer;">Withdraw POL</a>                                           
+            </div> 
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+        <div class="box3">
+          <div class="icon"><a href=""><img src = "assets/img/gold.png" height="50" width="50"></a></div>
+          <h4 class="title"><a href="" style="color: white;">GoldMine</a></h4>
+          <p class="description" align="left" style="color: white;">Min Saving: <span class="description2">5001</span></p>
+          <p class="description" align="left" style="color: white;">Max Saving: <span class="description2">7500</span></p>
+          <p class="description" align="left" style="color: white;">Days: <span class="description2">120</span></p>
+          <p class="description" align="left" style="color: white;">Daily ROI: <span class="description2">4%</span></p>
+          <p class="description" align="left" style="color: white;">Total ROI: <span class="description2">480%</span></p>
+          <form class="form">
+            <label class="form-label" style="color: white;">POL Amount: </label> 
+            <input type="number" class="form-control text-center" id="input3" name="txtamount3" oninput="calculateValues(this)" placeholder="5001">
+            <div class="box-footer">
+              <a class="services-btn align-middle" id = "mineButton3" style="color: white; border-color: #00FFFF; cursor:pointer;">Saving POL</a>  
+              <a class="services-btn align-middle" id="withdrawButton3" style="color: white; border-color: #00FFFF; cursor:pointer;">Withdraw POL</a>                              
+            </div> 
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in">
+        <div class="box3">
+          <div class="icon"><a href=""><img src = "assets/img/diamond.png" height="50" width="50"></a></div>
+          <h4 class="title"><a href="" style="color: white;">DiamondMine</a></h4>
+          <p class="description" align="left" style="color: white;">Min Saving: <span class="description2">7501</span></p>
+          <p class="description" align="left" style="color: white;">Max Saving: <span class="description2">Unlimited</span></p>
+          <p class="description" align="left" style="color: white;">Days: <span class="description2">120</span></p>
+          <p class="description" align="left" style="color: white;">Daily ROI: <span class="description2">5%</span></p>
+          <p class="description" align="left" style="color: white;">Total ROI: <span class="description2">600%</span></p>
+          <form class="form">
+            <label class="form-label" style="color: white;">POL Amount: </label> 
+            <input type="number" class="form-control text-center" id="input4" name="txtamount3" oninput="calculateValues(this)" placeholder="7501">
+            <div class="box-footer">
+              <a class="services-btn align-middle" id = "mineButton4" style="color: white; border-color: #00FFFF; cursor:pointer;">Saving POL</a>  
+              <a class="services-btn align-middle" id="withdrawButton4" style="color: white; border-color: #00FFFF; cursor:pointer;">Withdraw POL</a>                                            
+            </div> 
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Services Section -->
+
+
+<!-- ======= Features Section ======= -->
+<section id="features" class="features">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h3 class="section-title" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">DASHBOARD</h3>
+            <p class="section-description" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">Check your real-time withdrawable balance and a complete list of referrals and corresponding rewards. </p>
+        </div>
+        <div class="container" data-aos="fade-up">
+            <ul class="nav nav-tabs row gy-4 d-flex">
+                <li class="nav-item col-6 col-md-4 col-lg-2">
+                    <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">
+                        <i class="bi bi-binoculars color-cyan"></i>
+                        <h4>Wallet</h4>
+                    </a>
+                </li><!-- End Tab 1 Nav -->
+
+                <li class="nav-item col-6 col-md-4 col-lg-2">
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">
+                        <i class="bi bi-box-seam color-indigo"></i>
+                        <h4>Referral Links</h4>
+                    </a>
+                </li><!-- End Tab 2 Nav -->
+
+                <li class="nav-item col-6 col-md-4 col-lg-2">
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">
+                        <i class="bi bi-brightness-high color-teal"></i>
+                        <h4>Referral Bonus Percentages</h4>
+                    </a>
+                </li><!-- End Tab 3 Nav -->
+
+                <!-- <li class="nav-item col-6 col-md-4 col-lg-2">
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4" style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">
+                        <i class="bi bi-command color-red"></i>
+                        <h4>Transactions</h4>
+                    </a>
+                </li> -->
+
+          
+        </ul>
+
+        <div class="tab-content">
+
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row gy-4">
+              <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+                <h3>Withdrawable Referral Bonus: <span id="getUserRefBonus">0.00</span> POL</h3>
+				<form class="form">
+    				<div class="box-footer">
+					<button type="button" onclick="withdrawReferralBonus()" class="waves-effect waves-light btn btn-primary mb-5" id="Withdraw"><i class="fa fa-check"></i> Withdraw Referral Bonus</button>
+				    </div>
+					</form>
+                    <h3>Withdrawable Initial Income: <span id="getUserInitialIncome">0.00</span> POL</h3>
+				<form class="form">
+    				<div class="box-footer">
+					<button type="button" onclick="withdrawInitialIncome()" class="waves-effect waves-light btn btn-primary mb-5" id="Withdraw"><i class="fa fa-check"></i> Withdraw Initial Income</button>
+				    </div>
+					</form>
+				
+                <h4>AI Dashboard: </h4>
+                <ul>
+                  <!-- <li><i class="bi bi-check-circle-fill"></i> Total Deposit : <span id="invested">0.00 POL</span></li> !-->
+                  <li><i class="bi bi-check-circle-fill"></i> Your Total Deposit: <span id="getUserTotalMined">0.00</span> POL</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Total Withdrawn: <span id="getUserTotalWithdrawn">0.00</span> POL</li>
+				          <li><i class="bi bi-check-circle-fill"></i> Your Wallet Balance: <span id="my-balance">0.00 POL</span></li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- End Tab Content 1 -->
+
+          <div class="tab-pane" id="tab-2">
+            <div class="row gy-4">
+              <div class="col-lg-8 order-2 order-lg-1">
+                <h3>Referral Statistics</h3>
+				<p>Contract Address: 
+				<input type="text" class="form-control" value="0x76b270eef92519b26c354c055ed252c4dac8355b">
+				<a href="https://polygonscan.com/address/0x76b270eef92519b26c354c055ed252c4dac8355b" class="waves-effect waves-light btn btn-primary mb-5 mt-4" target="_blank"><i class="fa fa-check"></i> OPEN IN POLYSCAN</a>
+                <p style="margin-top:5px;">Sponsor Wallet Address: <span id="sp-address"></span></p>
+			
+			
+				<form class="form">
+    				<label class="form-label">Your Link: </label> 
+    				<input type="text" class="form-control" id="my-referral" value="">
+    				
+    				<div class="box-footer">
+					<br>
+					<button type="button" class="waves-effect waves-light btn btn-primary mb-5" id="copy-link"><i class="fa fa-check"></i> COPY LINK</button>
+					
+					</div> 
+					</form>
+			
+				
+                </div>
+            
+            </div>
+          </div><!-- End Tab Content 2 -->
+
+          <div class="tab-pane" id="tab-3">
+            <div class="row gy-4">
+              <div class="col-lg-8 order-2 order-lg-1">
+                <h3>Level %</h3>
+				<div class="col-lg-4 col-md-6">
+                <ul>
+                  <li><i class="bi bi-check-circle-fill"></i> Level 1 : <span id="referralsCountAtLevel1">7%</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i> Level 2 : <span id="referralsCountAtLevel2">4%</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i> Level 3 : <span id="referralsCountAtLevel3">2%</span></li>
+				  <li><i class="bi bi-check-circle-fill"></i> Level 4 : <span id="referralsCountAtLevel4">1%</span></li>
+                </ul>
+				</div>
+				<div class="col-lg-4 col-md-6">
+                <ul>
+                    <li><i class="bi bi-check-circle-fill"></i> Level 5 : <span id="referralsCountAtLevel5">1%</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i> Level 6 : <span id="referralsCountAtLevel6">1%</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i> Level 7 : <span id="referralsCountAtLevel7">1%</span></li>
+                </ul>
+				</div>
+              </div>
+             
+            </div>
+          </div><!-- End Tab Content 3 -->
+
+          <div class="tab-pane" id="tab-4">
+            <div class="row gy-4">
+              <div class="col-lg-8 order-2 order-lg-1">
+                <h3>Latest Contract Transactions:</h3>
+               
+				<form class="form">
+    				<label class="form-label">Enter Contract Address: </label> 
+    				<input type="text" class="form-control" id="walletAddress" value="">
+    				
+    				<div class="box-footer">
+					<br>
+					<button type="button" class="waves-effect waves-light btn btn-primary mb-5" id="copy-link"><i class="fa fa-check"></i> SHOW</button>
+				
+					</div> 
+					</form>
+				
+              </div>
+           
+            </div>
+          </div><!-- End Tab Content 4 -->
+
+          
+        </div>
+
+      </div>
+	  </div>
+    </section><!-- End Features Section -->
+
+   <!-- ======= F.A.Q Section ======= -->
+<!--<section id="faq" class="faq">
+  <div class="container-fluid" data-aos="fade-up">
+    <div class="row gy-4">
+      <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+        <div class="content px-xl-5">
+          <h3 style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;"> <strong></strong></h3>
+          <p style="color: white; text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;">General questions on the basics of transacting in POLMINE are answered here.</p>
+        </div>
+
+            <div class="accordion accordion-flush px-xl-5" id="faqlist">
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                    <i class="bi bi-question-circle question-icon"></i>
+                    How it Works?
+                  </button>
+                </h3>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Yield income paid on each and every block on Polygon (approximately 3 seconds) from 15 days to Maximum is infinity.
+					Minimum 5% daily for 60 days to up to short term yield of 30% daily for 10 days.
+					Safe, transparent, legit, decentralized never ending farm yield to earn from.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                    <i class="bi bi-question-circle question-icon"></i>
+                    How to start?
+                  </button>
+                </h3>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    You can use the MetaMask extension on Chrome if you are using desktop. You should add Polygon network to your Metamask extention and open https://POLMINE.art and click on connect.
+					For mobile you can download Metamask/Trust Wallet/SafePal app from application store. After the installation, you can create a new POL wallet or import an existing POL wallet. Then you can open https://POLMINE.art/ in you DApp browser, choose Polygon network and connect to the DApp.
+					After connecting to the DApp you should be able to Saving/withdraw and refer with your referrak link.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
+                    <i class="bi bi-question-circle question-icon"></i>
+                    What are the referral levels?
+                  </button>
+                </h3>
+                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    <i class="bi bi-question-circle question-icon"></i>
+                    User can refer unlimited users under any level which way goes paying upto 15 Levels starting from 5% to a total of upto 25% unrestricted earing potentials.
+					No business in the world succeed without team members at AIPRO each of referral is a team member on its own towards AIPRO .
+					The Project offers unrestricted unlimited potential for referral income upto 15 Level where each level on its own can have unlimited referrals.
+					Offers Level-1= 5%, Level-2=4%, Level-3=3%, Level-4=2%, Level-5=1%, Level-6=1%, Level-7=1%, Level-8=1%, Level-9=1%, Level-10=1%, Level-11=1%, Level-12=1%, Level-13=1%, Level-14=1% & Level-15=1%
+				  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="600">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
+                    <i class="bi bi-question-circle question-icon"></i>
+                    No Withdrawal limit:
+                  </button>
+                </h3>
+                <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Withdraw anytime with no minimum withdrawal requirement.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("assets/img/faq.jpg"); background-size: contain; background-position: center; width: 544px; height: 150px;'>
+            &nbsp;
+          </div>
+
+
+
+      </div>
+    </section>--><!-- End F.A.Q Section -->
+
+ 
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+<!-- <a href="https://www.flagcounter.me/details/eCL"><img src="https://www.flagcounter.me/eCL/" alt="Flag Counter"></a> -->
+<a href="https://www.flagcounter.me/details/e4b"><img src="https://www.flagcounter.me/e4b/" alt="Flag Counter"></a>
+    <div class="container">
+      <div class="copyright">
+        &copy; 2024 Copyright <h5>POLMINE</h5> All Rights Reserved
+      </div>
+      
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  
+  <script src="assets/js/toastr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
+
+  <script src="assets/maticjs/main.js?v=2.1"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+  <script type="text/javascript">
+	$(document).ready(function()
+    {
+
+	$(function() {  
+        
+      $('#copy-link').click(function(ev) {
+			copy_text($('#my-referral').val());
+			ev.preventDefault();
+	    });
+
+	});
+    
+    function copy_text(text){		
+	    // Create a dummy input to copy the string array inside it
+		var dummy = document.createElement("input");
+		// Add it to the document
+		document.body.appendChild(dummy);
+		// Set its ID
+		dummy.setAttribute("id", "dummy_id");
+		// Output the array into it
+		document.getElementById("dummy_id").value=text;
+		// Select it
+		dummy.select();		
+		document.execCommand("copy");
+		// Remove it as its not needed anymore
+		document.body.removeChild(dummy);
+		//alert('COPIED['+$('#my-referral').val()+']');
+		toastr.success($('#my-referral').html(),"",{"timeOut": "3000","positionClass": "toast-top-right"});
+		return false;
+	}
+	
+	// Set the date we're counting down to (October 1, 2024, 12:00 PM UTC)
+    var countDownDate = new Date("October 1, 2024 12:00:00 UTC").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+    
+      // Find the distance between now and the countdown date
+      var distance = now - countDownDate;
+    
+      // If the time is positive, show the elapsed time
+      if (distance > 0) {
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+        // Display the elapsed time
+        document.getElementById("running-timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      } else {
+        document.getElementById("running-timer").innerHTML = "Launcing Soon";
+      }
+    }, 1000);
+})
+    </script> 
+   
+
+</body>
+
+</html>
